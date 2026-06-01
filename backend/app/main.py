@@ -7,6 +7,7 @@ from app.services.pdf_extractor import extract_text_from_pdf, get_pdf_metadata
 from app.services.llm_analyzer import analyze_contract
 from app.services.ghost_detector import detect_ghost_clauses
 from app.services.counter_offer import generate_counter_offer
+from app.services.industry_comparison import compare_to_industry
 
 load_dotenv()
 
@@ -44,18 +45,20 @@ def analyze_document():
         asyncio.set_event_loop(loop)
         
         async def run_analysis():
-            # Run analysis and ghost detection concurrently
+            # Run analysis, ghost detection, and comparison concurrently
             analysis_task = analyze_contract(full_text, pages_data)
             ghost_task = detect_ghost_clauses(full_text, metadata.get("title", "general"))
-            return await asyncio.gather(analysis_task, ghost_task)
+            comparison_task = compare_to_industry(full_text, metadata.get("title", "general"))
+            return await asyncio.gather(analysis_task, ghost_task, comparison_task)
             
-        analysis_result, ghost_clauses = loop.run_until_complete(run_analysis())
+        analysis_result, ghost_clauses, comparison_data = loop.run_until_complete(run_analysis())
         loop.close()
 
         # Combine results
         analysis_result["filename"] = file.filename
         analysis_result["total_pages"] = metadata["page_count"]
         analysis_result["ghost_clauses"] = ghost_clauses
+        analysis_result["comparison"] = comparison_data
         analysis_result["extracted_text"] = [
             {"page_number": p.page_number, "content": p.content, "paragraphs": p.paragraphs}
             for p in pages

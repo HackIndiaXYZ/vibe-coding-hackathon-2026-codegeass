@@ -87,6 +87,35 @@
   --shadow-emerald-strong: 0 0 30px var(--emerald-glow);
 }
 
+[data-theme='light'] {
+  /* Clean White/Slate Background Palette */
+  --bg-deep: #f8fafc;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f1f5f9;
+  --bg-tertiary: #e2e8f0;
+  --bg-elevated: #ffffff;
+
+  /* Text Colors */
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-tertiary: #475569;
+  --text-muted: #64748b;
+
+  /* Glass Properties adjusted for light background */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-bg-hover: rgba(255, 255, 255, 0.9);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --glass-border-hover: rgba(0, 0, 0, 0.15);
+
+  /* Shadows adjusted for light mode */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.15);
+  --shadow-emerald: 0 0 15px rgba(16, 185, 129, 0.15);
+  --shadow-emerald-strong: 0 0 20px rgba(16, 185, 129, 0.25);
+}
+
 /* ── Reset & Base ── */
 *,
 *::before,

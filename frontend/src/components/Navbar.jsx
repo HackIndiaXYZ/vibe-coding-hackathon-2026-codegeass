@@ -5,7 +5,7 @@
 import { motion } from 'framer-motion';
 import './Navbar.css';
 
-export default function Navbar({ onReset, hasAnalysis, activeTab, onTabChange }) {
+export default function Navbar({ onReset, hasAnalysis, activeTab, onTabChange, isLightMode, onToggleTheme }) {
   return (
     <motion.nav
       className="navbar"
@@ -66,6 +66,16 @@ export default function Navbar({ onReset, hasAnalysis, activeTab, onTabChange })
               New Analysis
             </motion.button>
           )}
+          <motion.button
+            className="btn btn-ghost btn-sm"
+            onClick={onToggleTheme}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            title={`Switch to ${isLightMode ? 'Dark' : 'Light'} Mode`}
+            style={{ padding: 'var(--space-xs)' }}
+          >
+            {isLightMode ? '🌙' : '☀️'}
+          </motion.button>
           <motion.div
             className="status-dot"
             animate={{

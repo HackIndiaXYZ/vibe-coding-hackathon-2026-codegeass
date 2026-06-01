@@ -31,6 +31,15 @@ export default function App() {
   const [activeTab, setActiveTab] = useState('analyze');
   const [activeClauseId, setActiveClauseId] = useState(null);
   const [viewMode, setViewMode] = useState('risk');
+  const [isLightMode, setIsLightMode] = useState(false);
+
+  useEffect(() => {
+    if (isLightMode) {
+      document.documentElement.setAttribute('data-theme', 'light');
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+    }
+  }, [isLightMode]);
 
   // Save to history when analysis completes via fresh upload
   const [lastSavedFile, setLastSavedFile] = useState(null);
@@ -68,6 +77,8 @@ export default function App() {
         hasAnalysis={hasAnalysis}
         activeTab={activeTab}
         onTabChange={setActiveTab}
+        isLightMode={isLightMode}
+        onToggleTheme={() => setIsLightMode(!isLightMode)}
       />
 
       {/* Error Banner */}
