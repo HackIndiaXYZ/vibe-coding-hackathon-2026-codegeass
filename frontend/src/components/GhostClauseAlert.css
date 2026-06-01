@@ -1,0 +1,108 @@
+/* GhostClauseAlert Styles */
+
+.ghost-clause-section {
+  margin-top: var(--space-xl);
+  padding: var(--space-lg);
+  background: rgba(245, 158, 11, 0.05);
+  border: 1px dashed rgba(245, 158, 11, 0.3);
+  border-radius: var(--radius-lg);
+}
+
+.ghost-header {
+  margin-bottom: var(--space-md);
+}
+
+.ghost-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--risk-warning);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.ghost-icon {
+  font-size: 1.4rem;
+}
+
+.ghost-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-left: 2.2rem;
+}
+
+.ghost-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.ghost-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-left: 3px solid var(--risk-warning);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  cursor: pointer;
+  transition: background var(--duration-normal);
+}
+
+.ghost-card:hover {
+  background: var(--glass-bg-hover);
+}
+
+.ghost-card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--space-xs);
+}
+
+.ghost-card-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+.ghost-card-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-left: 24px;
+}
+
+.ghost-card-suggestion-wrapper {
+  overflow: hidden;
+}
+
+.ghost-card-suggestion {
+  margin-top: var(--space-md);
+  margin-left: 24px;
+  padding: var(--space-md);
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius-md);
+}
+
+.ghost-card-suggestion strong {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--emerald-400);
+  margin-bottom: var(--space-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.ghost-card-suggestion p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.ghost-card-footer {
+  margin-top: var(--space-sm);
+  margin-left: 24px;
+  font-size: 0.7rem;
+  color: var(--emerald-500);
+  font-weight: 600;
+}

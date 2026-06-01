@@ -1,0 +1,131 @@
+/* History Styles */
+
+.history {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.history-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+  gap: var(--space-md);
+}
+
+.history-empty-icon {
+  font-size: 4rem;
+  opacity: 0.5;
+}
+
+.history-empty h2 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+}
+
+.history-empty p {
+  color: var(--text-tertiary);
+  max-width: 360px;
+}
+
+.history-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.history-header h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.history-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-tertiary);
+  margin-top: 4px;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.history-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+}
+
+.history-card-left {
+  flex-shrink: 0;
+}
+
+.history-score {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 900;
+  border: 2px solid;
+  border-radius: 50%;
+  letter-spacing: -0.02em;
+}
+
+.history-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.history-filename {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.history-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+}
+
+.history-date {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.history-card-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .history-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  .history-meta {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .history-card-actions {
+    width: 100%;
+    justify-content: center;
+  }
+}
